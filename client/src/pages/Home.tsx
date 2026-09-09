@@ -82,7 +82,7 @@ export default function Home() {
                 {item.label}
               </a>
             ))}
-            <WhatsAppButton className="px-4 py-2 text-xs font-semibold text-white bg-[#25D366] hover:bg-[#20ba5a]" />
+            <WhatsAppButton className="px-4 py-2 text-xs" />
           </nav>
 
           <button
@@ -110,7 +110,7 @@ export default function Home() {
                   <ChevronRight size={16} />
                 </a>
               ))}
-              <WhatsAppButton className="mt-2 w-full justify-center text-white bg-[#25D366]" />
+              <WhatsAppButton className="mt-2 w-full justify-center" />
             </div>
           </nav>
         )}
@@ -134,7 +134,7 @@ export default function Home() {
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
-                <WhatsAppButton className="px-5 py-3 text-xs font-semibold text-white bg-[#25D366] hover:bg-[#20ba5a]" />
+                <WhatsAppButton />
                 <a
                   href="#sobre"
                   className="inline-flex items-center gap-2 px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[#614530] transition hover:text-[#312015]"
@@ -292,11 +292,7 @@ export default function Home() {
             </p>
 
             <div className="mt-8 flex justify-center">
-              {/* Botão corrigido: Fundo creme (#f8f5f0) com texto e ícone marrom escuro (#312015) */}
-              <WhatsAppButton
-                variant="light"
-                className="px-6 py-3.5 text-xs font-bold bg-[#f8f5f0] text-[#312015] hover:bg-[#ffffff] transition-colors shadow-md"
-              />
+              <WhatsAppButton variant="light" className="px-6 py-3.5 text-xs" />
             </div>
 
             <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-xs text-[#b8a390]">
