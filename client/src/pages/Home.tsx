@@ -19,6 +19,7 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 const navItems = [
   { label: "O Ateliê", href: "#sobre" },
   { label: "Serviços", href: "#servicos" },
+  { label: "Catálogo", href: "#catalogo" },
   { label: "Diferenciais", href: "#diferenciais" },
   { label: "Contato", href: "#contato" },
 ];
@@ -52,6 +53,22 @@ const services = [
     description:
       "Peças decorativas feitas à mão para trazer aconchego ao ambiente e à celebração.",
   },
+];
+
+const catalogImages = [
+  { id: 1, src: "/catalogo/1.jpeg" },
+  { id: 2, src: "/catalogo/2.jpeg" },
+  { id: 3, src: "/catalogo/3.jpeg" },
+  { id: 4, src: "/catalogo/4.jpeg" },
+  { id: 5, src: "/catalogo/5.jpeg" },
+  { id: 6, src: "/catalogo/6.jpeg" },
+  { id: 7, src: "/catalogo/7.jpeg" },
+  { id: 8, src: "/catalogo/8.jpeg" },
+  { id: 9, src: "/catalogo/9.jpeg" },
+  { id: 10, src: "/catalogo/10.jpeg" },
+  { id: 11, src: "/catalogo/11.jpeg" },
+  { id: 12, src: "/catalogo/12.jpeg" },
+  { id: 13, src: "/catalogo/13.jpeg" },
 ];
 
 const differentials = [
@@ -207,6 +224,37 @@ export default function Home() {
                   <a href="https://wa.me/5515996855481" target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-[0.16em] text-[#916e4b] transition-colors hover:text-[#312015]">
                     Encomendar <ArrowUpRight size={14} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                   </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+{/* SEÇÃO DE CATÁLOGO / GALERIA DE FOTOS */}
+<section id="catalogo" className="border-t border-[#e5d8c8] bg-[#f2ebd2]/20 px-6 py-24 sm:py-28">
+          <div className="mx-auto max-w-6xl">
+            <div className="text-center">
+              <span className="text-[11px] font-bold uppercase tracking-[0.28em] text-[#916e4b]">Nossos Trabalhos</span>
+              <h2 className="mt-3 font-display text-3xl text-[#312015] sm:text-5xl">Galeria de Peças Artesanais</h2>
+              <p className="mx-auto mt-4 max-w-xl text-sm text-[#826953]">
+                Confira algumas de nossas produções exclusivas entregues com todo o carinho e dedicação.
+              </p>
+            </div>
+
+            <div className="mt-14 grid grid-cols-1 items-start gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              {catalogImages.map((img) => (
+                <div
+                  key={img.id}
+                  className="group relative overflow-hidden rounded-2xl border border-[#d8c8b4] bg-[#faf6f0] p-2.5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                >
+                  <div className="relative w-full overflow-hidden rounded-xl bg-[#efe6d8]">
+                    <img
+                      src={img.src}
+                      alt={`Trabalho artesanal ${img.id}`}
+                      className="h-auto w-full object-contain transition-transform duration-500 ease-out group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
               ))}
             </div>
