@@ -65,11 +65,11 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen overflow-hidden bg-[#faf6f0] text-[#3d2c20] selection:bg-[#d8c0a3] selection:text-[#2d1f15] antialiased">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-[#e5d8c8]/80 bg-[#faf6f0]/95 shadow-[0_8px_30px_rgba(61,44,32,0.05)] backdrop-blur-md">
+    <div className="min-h-screen bg-[#faf6f0] text-[#3d2c20] selection:bg-[#d8c0a3] selection:text-[#2d1f15] antialiased">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-[#e5d8c8] bg-[#faf6f0]">
         <div className="mx-auto flex h-[76px] max-w-6xl items-center justify-between px-6">
           <a href="#inicio" aria-label="Ateliê Momento Perfeito" className="group flex items-center gap-3">
-            <span className="relative flex h-9 w-9 items-center justify-center rounded-full border border-[#d8c8b4] bg-[#f1e8dc] shadow-[inset_0_0_0_4px_#faf6f0] transition-transform duration-300 group-hover:rotate-6">
+            <span className="relative flex h-9 w-9 items-center justify-center rounded-full border border-[#d8c8b4] bg-[#f1e8dc] transition-transform duration-300 group-hover:rotate-3">
               <BrandLogo variant="mark" className="h-7 w-7 rounded-full mix-blend-multiply" />
             </span>
             <span className="text-[11px] font-bold uppercase tracking-[0.24em] text-[#614530] transition-colors group-hover:text-[#312015]">
@@ -82,12 +82,12 @@ export default function Home() {
               <a
                 key={item.href}
                 href={item.href}
-                className="relative py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#735843] transition-colors duration-200 after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-[#916e4b] after:transition-all after:duration-300 hover:text-[#3d2c20] hover:after:w-full"
+                className="relative py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#735843] transition-colors duration-200 hover:text-[#3d2c20]"
               >
                 {item.label}
               </a>
             ))}
-            <WhatsAppButton className="!bg-[#3e2c20] !text-[#faf6f0] [&_*]:!text-[#faf6f0] [&_*]:!fill-[#faf6f0] hover:!bg-[#573e2e] px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.08em] rounded-full shadow-[0_8px_18px_rgba(62,44,32,0.16)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_24px_rgba(62,44,32,0.22)] active:translate-y-0" />
+            <WhatsAppButton className="!bg-[#3e2c20] !text-[#faf6f0] [&_*]:!text-[#faf6f0] [&_*]:!fill-[#faf6f0] hover:!bg-[#573e2e] px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.08em] rounded-full transition-colors duration-300 active:scale-[0.98]" />
           </nav>
 
           <button
@@ -123,13 +123,10 @@ export default function Home() {
 
       <main className="pt-[76px]">
         <section id="inicio" className="relative isolate mx-auto max-w-6xl px-6 pb-20 pt-20 sm:pb-28 sm:pt-28 lg:pb-32 lg:pt-32">
-          <div className="pointer-events-none absolute -right-40 -top-20 -z-10 h-[520px] w-[520px] rounded-full bg-[#f2ebd2]/70 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-32 left-1/3 -z-10 h-64 w-64 rounded-full bg-[#e8d4be]/30 blur-3xl" />
-
           <div className="grid gap-14 lg:grid-cols-12 lg:items-center lg:gap-10">
             <div className="lg:col-span-7">
               <div className="mb-6 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.28em] text-[#916e4b]">
-                <span className="h-px w-10 bg-[#b89670]" />
+                <span className="h-px w-8 bg-[#b89670]" />
                 Ateliê de Festas & Eventos
               </div>
 
@@ -142,7 +139,7 @@ export default function Home() {
               </p>
 
               <div className="mt-9 flex flex-wrap items-center gap-4">
-                <WhatsAppButton className="!bg-[#3e2c20] !text-[#faf6f0] [&_*]:!text-[#faf6f0] [&_*]:!fill-[#faf6f0] hover:!bg-[#573e2e] px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.1em] rounded-full shadow-[0_10px_22px_rgba(62,44,32,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_28px_rgba(62,44,32,0.24)] active:translate-y-0" />
+                <WhatsAppButton className="!bg-[#3e2c20] !text-[#faf6f0] [&_*]:!text-[#faf6f0] [&_*]:!fill-[#faf6f0] hover:!bg-[#573e2e] px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.1em] rounded-full transition-colors duration-300 active:scale-[0.98]" />
                 <a href="#sobre" className="group inline-flex items-center gap-2 border-b border-[#b89670] px-1 py-3 text-[11px] font-bold uppercase tracking-[0.16em] text-[#614530] transition-colors hover:border-[#3d2c20] hover:text-[#312015]">
                   Conheça o Ateliê
                   <ArrowDown size={14} className="transition-transform duration-300 group-hover:translate-y-1" />
@@ -150,14 +147,14 @@ export default function Home() {
               </div>
 
               <div className="mt-14 flex items-center gap-3 text-xs font-medium text-[#826953]">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#f1e8dc] text-[#916e4b]"><MapPin size={14} /></span>
+                <MapPin size={15} className="text-[#916e4b]" />
                 <span>Porto Feliz, SP <span className="mx-1 text-[#c5ad93]">—</span> Atendimento sob encomenda</span>
               </div>
             </div>
 
             <div className="relative lg:col-span-5">
-              <div className="absolute -inset-3 rounded-[2rem] border border-[#d8c8b4]/50 rotate-3" />
-              <div className="group relative mx-auto max-w-sm rounded-[1.5rem] border border-[#d8c8b4] bg-[#f1e8dc] p-3 shadow-[0_22px_55px_rgba(83,58,37,0.13)] transition-transform duration-500 hover:-translate-y-1">
+              <div className="absolute -inset-3 rotate-3 rounded-[2rem] border border-[#d8c8b4]/50" />
+              <div className="group relative mx-auto max-w-sm rounded-[1.5rem] border border-[#d8c8b4] bg-[#f1e8dc] p-3 shadow-[0_18px_40px_rgba(83,58,37,0.10)] transition-transform duration-500 hover:-translate-y-1">
                 <div className="overflow-hidden rounded-[1.05rem]">
                   <img src="/logo.png" alt="Ateliê Momento Perfeito - Elvira Santos" className="aspect-[4/5] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]" />
                 </div>
@@ -182,7 +179,7 @@ export default function Home() {
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-3">
               {["Porto Feliz - SP", "Produção Sob Medida", "Feito à Mão"].map((tag) => (
-                <span key={tag} className="rounded-full border border-[#d8c8b4] bg-[#faf6f0] px-5 py-2 text-[11px] font-bold uppercase tracking-[0.08em] text-[#614530] shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[#b89670]">{tag}</span>
+                <span key={tag} className="border-b border-[#d8c8b4] px-1 py-2 text-[11px] font-bold uppercase tracking-[0.08em] text-[#614530] transition-colors duration-200 hover:border-[#b89670]">{tag}</span>
               ))}
             </div>
           </div>
@@ -200,10 +197,10 @@ export default function Home() {
 
             <div className="mt-14 grid gap-4 md:grid-cols-2">
               {services.map(({ number, icon: Icon, title, description }) => (
-                <div key={number} className="group relative rounded-2xl border border-[#e5d8c8] bg-[#fdfaf6] p-7 shadow-[0_8px_24px_rgba(83,58,37,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#cbb295] hover:shadow-[0_16px_34px_rgba(83,58,37,0.10)] sm:p-8">
+                <div key={number} className="group relative border-t border-[#e5d8c8] bg-[#fdfaf6]/60 p-7 transition-colors duration-300 hover:border-[#b89670] sm:p-8">
                   <div className="flex items-start justify-between">
                     <span className="font-display text-3xl text-[#b89670]/70">{number}</span>
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f1e8dc] text-[#614530] transition-colors group-hover:bg-[#3e2c20] group-hover:text-[#f8f5f0]"><Icon size={18} /></span>
+                    <span className="text-[#614530] transition-transform group-hover:translate-x-1"><Icon size={20} /></span>
                   </div>
                   <h3 className="mt-8 font-display text-2xl text-[#312015]">{title}</h3>
                   <p className="mt-3 max-w-md text-sm leading-relaxed text-[#685341]">{description}</p>
