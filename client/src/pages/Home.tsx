@@ -82,7 +82,8 @@ export default function Home() {
                 {item.label}
               </a>
             ))}
-            <WhatsAppButton className="px-4 py-2 text-xs" />
+            {/* Botão no Header: Fundo marrom escuro com texto claro */}
+            <WhatsAppButton className="!bg-[#3e2c20] !text-[#f8f5f0] [&_*]:!text-[#f8f5f0] [&_*]:!fill-[#f8f5f0] hover:!bg-[#573e2e] px-4 py-2 text-xs font-semibold rounded-full transition-colors" />
           </nav>
 
           <button
@@ -110,7 +111,7 @@ export default function Home() {
                   <ChevronRight size={16} />
                 </a>
               ))}
-              <WhatsAppButton className="mt-2 w-full justify-center" />
+              <WhatsAppButton className="mt-2 w-full justify-center !bg-[#3e2c20] !text-[#f8f5f0] [&_*]:!text-[#f8f5f0] [&_*]:!fill-[#f8f5f0] hover:!bg-[#573e2e] py-2.5 rounded-full" />
             </div>
           </nav>
         )}
@@ -134,7 +135,8 @@ export default function Home() {
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
-                <WhatsAppButton />
+                {/* Botão no Hero: Marrom marcante com borda suave */}
+                <WhatsAppButton className="!bg-[#3e2c20] !text-[#f8f5f0] [&_*]:!text-[#f8f5f0] [&_*]:!fill-[#f8f5f0] hover:!bg-[#573e2e] px-5 py-3 text-xs font-semibold rounded-full transition-colors shadow-sm" />
                 <a
                   href="#sobre"
                   className="inline-flex items-center gap-2 px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[#614530] transition hover:text-[#312015]"
@@ -292,7 +294,10 @@ export default function Home() {
             </p>
 
             <div className="mt-8 flex justify-center">
-              <WhatsAppButton variant="light" className="px-6 py-3.5 text-xs" />
+              {/* Botão no Footer Escuro: Fundo creme claro com texto/ícone marrom escuro */}
+              <WhatsAppButton
+                className="!bg-[#f8f5f0] !text-[#3e2c20] [&_*]:!text-[#3e2c20] [&_*]:!fill-[#3e2c20] hover:!bg-[#ffffff] px-6 py-3.5 text-xs font-bold transition-colors shadow-md rounded-full"
+              />
             </div>
 
             <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-xs text-[#b8a390]">

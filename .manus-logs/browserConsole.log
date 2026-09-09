@@ -47,3 +47,26 @@
 [2026-09-09T15:18:29.184Z] {"timestamp":1788967107677,"level":"DEBUG","args":["[Manus] Debug collector initialized (no rrweb, UI events only)"],"stack":null}
 [2026-09-09T15:18:29.184Z] {"timestamp":1788967107693,"level":"DEBUG","args":["[vite] connected."],"stack":null}
 [2026-09-09T15:18:29.184Z] {"timestamp":1788967107696,"level":"INFO","args":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"],"stack":null}
+[2026-09-09T15:21:30.023Z] {"timestamp":1788967288006,"level":"DEBUG","args":["[Manus] Debug collector initialized (no rrweb, UI events only)"],"stack":null}
+[2026-09-09T15:21:30.023Z] {"timestamp":1788967288141,"level":"DEBUG","args":["[vite] connected."],"stack":null}
+[2026-09-09T15:21:30.023Z] {"timestamp":1788967288161,"level":"INFO","args":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"],"stack":null}
+[2026-09-09T15:21:44.124Z] {"timestamp":1788967303650,"level":"DEBUG","args":["[vite]","hot updated: /src/App.tsx"],"stack":null}
+[2026-09-09T15:21:44.124Z] {"timestamp":1788967303650,"level":"DEBUG","args":["[vite]","hot updated: /src/index.css"],"stack":null}
+[2026-09-09T15:21:47.014Z] {"timestamp":1788967306365,"level":"DEBUG","args":["[Manus] Debug collector initialized (no rrweb, UI events only)"],"stack":null}
+[2026-09-09T15:21:47.014Z] {"timestamp":1788967306375,"level":"DEBUG","args":["[vite] connected."],"stack":null}
+[2026-09-09T15:21:47.014Z] {"timestamp":1788967306387,"level":"INFO","args":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"],"stack":null}
+[2026-09-09T15:21:47.863Z] {"timestamp":1788967307162,"level":"DEBUG","args":["[Manus] Debug collector initialized (no rrweb, UI events only)"],"stack":null}
+[2026-09-09T15:21:47.863Z] {"timestamp":1788967307172,"level":"DEBUG","args":["[vite] connected."],"stack":null}
+[2026-09-09T15:21:47.863Z] {"timestamp":1788967307184,"level":"INFO","args":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"],"stack":null}
+[2026-09-09T15:21:50.129Z] {"timestamp":1788967307989,"level":"DEBUG","args":["[Manus] Debug collector initialized (no rrweb, UI events only)"],"stack":null}
+[2026-09-09T15:21:50.129Z] {"timestamp":1788967307999,"level":"DEBUG","args":["[vite] connected."],"stack":null}
+[2026-09-09T15:21:50.129Z] {"timestamp":1788967308012,"level":"INFO","args":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"],"stack":null}
+[2026-09-09T15:22:07.124Z] {"timestamp":1788967325109,"level":"DEBUG","args":["[Manus] Debug collector initialized (no rrweb, UI events only)"],"stack":null}
+[2026-09-09T15:22:07.124Z] {"timestamp":1788967325120,"level":"DEBUG","args":["[vite] connected."],"stack":null}
+[2026-09-09T15:22:07.124Z] {"timestamp":1788967325132,"level":"INFO","args":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"],"stack":null}
+[2026-09-09T15:22:41.135Z] {"timestamp":1788967359654,"level":"DEBUG","args":["[vite]","hot updated: /src/index.css"],"stack":null}
+[2026-09-09T15:22:45.194Z] {"timestamp":1788967363181,"level":"DEBUG","args":["[Manus] Debug collector initialized (no rrweb, UI events only)"],"stack":null}
+[2026-09-09T15:22:45.194Z] {"timestamp":1788967363193,"level":"DEBUG","args":["[vite] connected."],"stack":null}
+[2026-09-09T15:22:45.194Z] {"timestamp":1788967363205,"level":"INFO","args":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"],"stack":null}
+[2026-09-09T15:23:08.134Z] {"timestamp":1788967387080,"level":"DEBUG","args":["[vite]","hot updated: /src/index.css"],"stack":null}
+[2026-09-09T15:23:08.134Z] {"timestamp":1788967387080,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Home.tsx"],"stack":null}
