@@ -61,13 +61,13 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#f8f5f0] text-[#3d2c20] selection:bg-[#d8c0a3] selection:text-[#2d1f15]">
-      {/* Header Fixo e Discreto */}
-      <header className="fixed inset-x-0 top-0 z-50 bg-[#f8f5f0]/90 backdrop-blur-md border-b border-[#e5d8c8]/70">
+    <div className="min-h-screen bg-[#f8f5f0] text-[#3d2c20] selection:bg-[#d8c0a3] selection:text-[#2d1f15] antialiased">
+      {/* Header Fixo - Fundo 100% Sólido para não sobrepor o texto */}
+      <header className="fixed inset-x-0 top-0 z-50 bg-[#f8f5f0] border-b border-[#e5d8c8] shadow-xs transition-shadow duration-300">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a href="#inicio" aria-label="Ateliê Momento Perfeito" className="flex items-center gap-3">
-            <BrandLogo variant="mark" className="h-8 w-8 rounded-full mix-blend-multiply" />
-            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#614530]">
+          <a href="#inicio" aria-label="Ateliê Momento Perfeito" className="group flex items-center gap-3">
+            <BrandLogo variant="mark" className="h-8 w-8 rounded-full mix-blend-multiply transition-transform duration-300 group-hover:scale-105" />
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#614530] transition-colors group-hover:text-[#312015]">
               Momento Perfeito
             </span>
           </a>
@@ -77,19 +77,19 @@ export default function Home() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-xs font-medium tracking-[0.15em] uppercase text-[#735843] transition hover:text-[#3d2c20]"
+                className="text-xs font-medium tracking-[0.15em] uppercase text-[#735843] transition-colors duration-200 hover:text-[#3d2c20]"
               >
                 {item.label}
               </a>
             ))}
-            {/* Botão no Header: Fundo marrom escuro com texto claro */}
-            <WhatsAppButton className="!bg-[#3e2c20] !text-[#f8f5f0] [&_*]:!text-[#f8f5f0] [&_*]:!fill-[#f8f5f0] hover:!bg-[#573e2e] px-4 py-2 text-xs font-semibold rounded-full transition-colors" />
+            {/* Botão no Header com Microinteração */}
+            <WhatsAppButton className="!bg-[#3e2c20] !text-[#f8f5f0] [&_*]:!text-[#f8f5f0] [&_*]:!fill-[#f8f5f0] hover:!bg-[#573e2e] px-4 py-2 text-xs font-semibold rounded-full transition-all duration-300 hover:shadow-xs active:scale-95" />
           </nav>
 
           <button
             type="button"
             onClick={() => setMenuOpen((curr) => !curr)}
-            className="p-1 text-[#614530] md:hidden"
+            className="p-1 text-[#614530] transition-transform active:scale-90 md:hidden"
             aria-label="Menu"
           >
             {menuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -118,7 +118,7 @@ export default function Home() {
       </header>
 
       <main className="pt-20">
-        {/* Hero / Apresentação */}
+        {/* Hero / Apresentação Editorial */}
         <section id="inicio" className="mx-auto max-w-6xl px-6 py-16 sm:py-24 lg:py-28">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-7">
@@ -126,8 +126,8 @@ export default function Home() {
                 Ateliê de Festas & Eventos
               </p>
 
-              <h1 className="font-display mt-4 text-4xl font-normal leading-[1.08] text-[#312015] sm:text-6xl">
-                Detalhes artesanais feitos para <em className="italic font-serif text-[#8f683d]">eternizar</em> celebrações.
+              <h1 className="font-display mt-4 text-4xl font-normal leading-[1.1] text-[#312015] sm:text-6xl">
+                Detalhes artesanais feitos para <em className="italic font-serif text-[#8f683d] transition-colors hover:text-[#6e4e2b]">eternizar</em> celebrações.
               </h1>
 
               <p className="mt-6 max-w-xl text-base leading-relaxed text-[#685341] sm:text-lg">
@@ -135,13 +135,12 @@ export default function Home() {
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
-                {/* Botão no Hero: Marrom marcante com borda suave */}
-                <WhatsAppButton className="!bg-[#3e2c20] !text-[#f8f5f0] [&_*]:!text-[#f8f5f0] [&_*]:!fill-[#f8f5f0] hover:!bg-[#573e2e] px-5 py-3 text-xs font-semibold rounded-full transition-colors shadow-sm" />
+                <WhatsAppButton className="!bg-[#3e2c20] !text-[#f8f5f0] [&_*]:!text-[#f8f5f0] [&_*]:!fill-[#f8f5f0] hover:!bg-[#573e2e] px-5 py-3 text-xs font-semibold rounded-full transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 shadow-xs" />
                 <a
                   href="#sobre"
-                  className="inline-flex items-center gap-2 px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[#614530] transition hover:text-[#312015]"
+                  className="group inline-flex items-center gap-2 px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[#614530] transition-colors hover:text-[#312015]"
                 >
-                  Conheça o Ateliê <ArrowDown size={14} />
+                  Conheça o Ateliê <ArrowDown size={14} className="transition-transform duration-300 group-hover:translate-y-1" />
                 </a>
               </div>
 
@@ -151,13 +150,14 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Imagem do Ateliê com Transição Suave */}
             <div className="lg:col-span-5">
-              <div className="relative mx-auto max-w-sm rounded-2xl border border-[#e5d8c8] bg-[#f1e8dc] p-3 shadow-sm">
+              <div className="group mx-auto max-w-sm rounded-2xl border border-[#e5d8c8] bg-[#f1e8dc]/80 p-3 transition-shadow duration-300 hover:shadow-md">
                 <div className="overflow-hidden rounded-xl">
                   <img
                     src="/logo.png"
                     alt="Ateliê Momento Perfeito - Elvira Santos"
-                    className="aspect-[4/5] w-full object-cover"
+                    className="aspect-[4/5] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                   />
                 </div>
                 <div className="p-4 text-center">
@@ -170,8 +170,8 @@ export default function Home() {
         </section>
 
         {/* Sobre o Ateliê */}
-        <section id="sobre" className="border-t border-[#e5d8c8] bg-[#f2ebd2]/30 px-6 py-20">
-          <div className="mx-auto max-w-4xl text-center">
+        <section id="sobre" className="border-t border-[#e5d8c8] bg-[#f2ebd2]/20 px-6 py-20">
+          <div className="mx-auto max-w-3xl text-center">
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#916e4b]">
               História & Propósito
             </span>
@@ -181,21 +181,17 @@ export default function Home() {
             <p className="mt-6 text-base leading-relaxed text-[#685341] sm:text-lg">
               À frente do ateliê, <strong className="font-semibold text-[#312015]">Elvira Santos</strong> acompanha cada projeto do rascunho ao acabamento final. Acreditamos que festas e homenagens ganham vida nos pequenos detalhes — na escolha dos papéis, nas fitas, nas texturas e no carinho colocado em cada dobra.
             </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <span className="rounded-full border border-[#d8c8b4] bg-[#f8f5f0] px-4 py-1.5 text-xs font-medium text-[#614530]">
-                Porto Feliz - SP
-              </span>
-              <span className="rounded-full border border-[#d8c8b4] bg-[#f8f5f0] px-4 py-1.5 text-xs font-medium text-[#614530]">
-                Produção Sob Medida
-              </span>
-              <span className="rounded-full border border-[#d8c8b4] bg-[#f8f5f0] px-4 py-1.5 text-xs font-medium text-[#614530]">
-                Feito à Mão
-              </span>
+            <div className="mt-8 flex flex-wrap justify-center gap-2.5">
+              {["Porto Feliz - SP", "Produção Sob Medida", "Feito à Mão"].map((tag) => (
+                <span key={tag} className="rounded-full border border-[#d8c8b4] bg-[#f8f5f0] px-4 py-1.5 text-xs font-medium text-[#614530] transition-transform duration-200 hover:-translate-y-0.5">
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Serviços (Layout Estilo Lista Editorial) */}
+        {/* Serviços (Animação Suave na Seta de Encomendar) */}
         <section id="servicos" className="border-t border-[#e5d8c8] px-6 py-20">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-xl">
@@ -209,11 +205,11 @@ export default function Home() {
 
             <div className="mt-12 divide-y divide-[#e5d8c8] border-y border-[#e5d8c8]">
               {services.map(({ number, icon: Icon, title, description }) => (
-                <div key={number} className="group py-8 transition-colors hover:bg-[#f2ebd2]/20">
+                <div key={number} className="group py-8 transition-colors duration-300 hover:bg-[#f2ebd2]/10">
                   <div className="grid gap-4 sm:grid-cols-12 sm:items-center">
                     <div className="flex items-center gap-4 sm:col-span-4">
-                      <span className="font-display text-xl text-[#916e4b]">{number}</span>
-                      <Icon size={20} className="text-[#614530]" />
+                      <span className="font-display text-lg text-[#916e4b]">{number}</span>
+                      <Icon size={18} className="text-[#614530] transition-transform duration-300 group-hover:scale-110" />
                       <h3 className="font-display text-xl text-[#312015]">{title}</h3>
                     </div>
                     <p className="text-sm leading-relaxed text-[#685341] sm:col-span-6">
@@ -224,9 +220,9 @@ export default function Home() {
                         href="https://wa.me/5515996855481"
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-[0.15em] text-[#916e4b] hover:text-[#312015]"
+                        className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-[0.15em] text-[#916e4b] transition-colors hover:text-[#312015]"
                       >
-                        Encomendar <ArrowUpRight size={14} />
+                        Encomendar <ArrowUpRight size={14} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       </a>
                     </div>
                   </div>
@@ -237,7 +233,7 @@ export default function Home() {
         </section>
 
         {/* Diferenciais */}
-        <section id="diferenciais" className="border-t border-[#e5d8c8] bg-[#efe6d8]/40 px-6 py-20">
+        <section id="diferenciais" className="border-t border-[#e5d8c8] bg-[#efe6d8]/30 px-6 py-20">
           <div className="mx-auto max-w-6xl">
             <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
               <div className="lg:col-span-6">
@@ -249,17 +245,17 @@ export default function Home() {
                 </h2>
                 <div className="mt-8 space-y-4">
                   {differentials.map((diff) => (
-                    <div key={diff} className="flex items-center gap-3">
-                      <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#916e4b] text-white">
+                    <div key={diff} className="group flex items-center gap-3">
+                      <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#916e4b] text-white transition-transform duration-300 group-hover:scale-110">
                         <Check size={12} strokeWidth={3} />
                       </div>
-                      <span className="text-sm font-medium text-[#4a392c]">{diff}</span>
+                      <span className="text-sm font-medium text-[#4a392c] transition-colors group-hover:text-[#312015]">{diff}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-[#d8c8b4] bg-[#f8f5f0] p-8 lg:col-span-6">
+              <div className="rounded-2xl border border-[#d8c8b4] bg-[#f8f5f0] p-8 shadow-xs lg:col-span-6">
                 <h3 className="font-display text-2xl text-[#312015]">Como funciona o pedido?</h3>
                 <ol className="mt-6 space-y-4 text-sm text-[#685341]">
                   <li className="flex gap-3">
@@ -294,9 +290,8 @@ export default function Home() {
             </p>
 
             <div className="mt-8 flex justify-center">
-              {/* Botão no Footer Escuro: Fundo creme claro com texto/ícone marrom escuro */}
               <WhatsAppButton
-                className="!bg-[#f8f5f0] !text-[#3e2c20] [&_*]:!text-[#3e2c20] [&_*]:!fill-[#3e2c20] hover:!bg-[#ffffff] px-6 py-3.5 text-xs font-bold transition-colors shadow-md rounded-full"
+                className="!bg-[#f8f5f0] !text-[#3e2c20] [&_*]:!text-[#3e2c20] [&_*]:!fill-[#3e2c20] hover:!bg-[#ffffff] px-6 py-3.5 text-xs font-bold transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 shadow-xs rounded-full"
               />
             </div>
 
@@ -318,9 +313,9 @@ export default function Home() {
             href="https://www.instagram.com/momento_perfeito_by_elvira"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs text-[#d0bead] hover:text-white"
+            className="group inline-flex items-center gap-1.5 text-xs text-[#d0bead] transition-colors hover:text-white"
           >
-            <Instagram size={14} /> Instagram
+            <Instagram size={14} className="transition-transform duration-300 group-hover:scale-110" /> Instagram
           </a>
         </div>
       </footer>
