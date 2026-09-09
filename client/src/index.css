@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -9,8 +9,8 @@
 
 :root {
   font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
-  color: #3d2c20;
-  background: #f8f5f0;
+  color: #2c221e;
+  background: #faf8f5;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -22,13 +22,13 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 90px;
 }
 
 body {
   margin: 0;
   min-width: 320px;
-  background: #f8f5f0;
+  background: #faf8f5;
 }
 
 a {
@@ -41,11 +41,11 @@ a {
 }
 
 ::selection {
-  background: #d8c0a3;
-  color: #2d1f15;
+  background: rgba(197, 160, 89, 0.2);
+  color: #1c1613;
 }
 
 :focus-visible {
-  outline: 2px solid #916e4b;
+  outline: 1px solid #c5a059;
   outline-offset: 3px;
 }

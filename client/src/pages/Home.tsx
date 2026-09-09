@@ -28,7 +28,7 @@ const services = [
     number: "01",
     icon: Gift,
     title: "Personalizados para Festas",
-    description: "Caixas decoradas, papelaria fina e detalhes exclusivos para compor a mesa principal do seu evento.",
+    description: "Caixas decoradas, papelaria fina e composição de mesa desenvolvidas exclusivamente para o seu evento.",
   },
   {
     number: "02",
@@ -40,127 +40,133 @@ const services = [
     number: "03",
     icon: Heart,
     title: "Presentes Especiais",
-    description: "Kits e composições artesanais sob medida para homenagear e surpreender quem você ama.",
+    description: "Kits e composições artesanais sob medida para homenagear e surpreender em momentos marcantes.",
   },
   {
     number: "04",
     icon: Palette,
     title: "Itens de Decoração",
-    description: "Peças decorativas feitas à mão para trazer aconchego ao ambiente e à celebração.",
+    description: "Peças decorativas feitas à mão que trazem aconchego, sofisticação e charme ao ambiente.",
   },
 ];
 
 const differentials = [
-  "Atendimento direto com a artesã",
-  "Produção 100% personalizada",
-  "Acabamento rigoroso e cuidadoso",
-  "Materiais e texturas selecionados",
+  "Atendimento exclusivo e direto com a artesã",
+  "Design e produção 100% personalizados",
+  "Acabamento minucioso e de alto padrão",
+  "Curadoria rigorosa de papéis e tecidos",
 ];
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#f8f5f0] text-[#3d2c20] selection:bg-[#d8c0a3] selection:text-[#2d1f15]">
-      {/* Header Fixo e Discreto */}
-      <header className="fixed inset-x-0 top-0 z-50 bg-[#f8f5f0]/90 backdrop-blur-md border-b border-[#e5d8c8]/70">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a href="#inicio" aria-label="Ateliê Momento Perfeito" className="flex items-center gap-3">
-            <BrandLogo variant="mark" className="h-8 w-8 rounded-full mix-blend-multiply" />
-            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#614530]">
+    <div className="min-h-screen bg-[#faf8f5] text-[#2c221e] selection:bg-[#c5a059]/20 selection:text-[#1c1613]">
+      {/* Header Fixo Minimalista */}
+      <header className="fixed inset-x-0 top-0 z-50 bg-[#faf8f5]/80 backdrop-blur-md border-b border-[#e8e2d9]/60">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+          <a href="#inicio" aria-label="Ateliê Momento Perfeito" className="flex items-center gap-3 group">
+            <BrandLogo variant="mark" className="h-7 w-7 rounded-full mix-blend-multiply opacity-90 transition-opacity group-hover:opacity-100" />
+            <span className="text-[0.68rem] font-semibold tracking-[0.25em] uppercase text-[#4a3e3d]">
               Momento Perfeito
             </span>
           </a>
 
-          <nav className="hidden items-center gap-8 md:flex" aria-label="Navegação">
+          <nav className="hidden items-center gap-9 md:flex" aria-label="Navegação">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-xs font-medium tracking-[0.15em] uppercase text-[#735843] transition hover:text-[#3d2c20]"
+                className="text-[0.68rem] font-medium tracking-[0.2em] uppercase text-[#6e605d] transition-colors hover:text-[#c5a059]"
               >
                 {item.label}
               </a>
             ))}
-            <WhatsAppButton className="px-4 py-2 text-xs font-semibold text-white bg-[#25D366] hover:bg-[#20ba5a]" />
+            <WhatsAppButton className="ml-2 px-5 py-2.5 text-xs font-semibold text-white bg-[#1c1613] hover:bg-[#382d27] transition-all rounded-none tracking-widest uppercase" />
           </nav>
 
           <button
             type="button"
             onClick={() => setMenuOpen((curr) => !curr)}
-            className="p-1 text-[#614530] md:hidden"
+            className="p-1 text-[#2c221e] md:hidden"
             aria-label="Menu"
           >
-            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+            {menuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
         {/* Menu Mobile */}
         {menuOpen && (
-          <nav className="border-b border-[#e5d8c8] bg-[#f8f5f0] px-6 py-4 md:hidden">
-            <div className="flex flex-col gap-3">
+          <nav className="border-b border-[#e8e2d9] bg-[#faf8f5] px-6 py-6 md:hidden">
+            <div className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
-                  className="flex items-center justify-between py-2 text-sm font-medium text-[#614530]"
+                  className="flex items-center justify-between py-2 text-xs font-medium tracking-[0.15em] uppercase text-[#4a3e3d]"
                 >
                   {item.label}
-                  <ChevronRight size={16} />
+                  <ChevronRight size={14} className="text-[#c5a059]" />
                 </a>
               ))}
-              <WhatsAppButton className="mt-2 w-full justify-center text-white bg-[#25D366]" />
+              <WhatsAppButton className="mt-3 w-full justify-center text-white bg-[#1c1613] py-3 text-xs tracking-widest uppercase rounded-none" />
             </div>
           </nav>
         )}
       </header>
 
-      <main className="pt-20">
-        {/* Hero / Apresentação */}
-        <section id="inicio" className="mx-auto max-w-6xl px-6 py-16 sm:py-24 lg:py-28">
-          <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
+      <main className="pt-24">
+        {/* Hero Section Editorial */}
+        <section id="inicio" className="mx-auto max-w-6xl px-6 py-16 sm:py-24 lg:py-32">
+          <div className="grid gap-16 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-7">
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#916e4b]">
-                Ateliê de Festas & Eventos
-              </p>
+              <div className="inline-flex items-center gap-3 border-b border-[#c5a059]/40 pb-2">
+                <span className="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#c5a059]">
+                  Ateliê de Celebrações
+                </span>
+              </div>
 
-              <h1 className="font-display mt-4 text-4xl font-normal leading-[1.08] text-[#312015] sm:text-6xl">
-                Detalhes artesanais feitos para <em className="italic font-serif text-[#8f683d]">eternizar</em> celebrações.
+              <h1 className="font-display mt-6 text-4xl font-normal leading-[1.1] text-[#1c1613] sm:text-6xl lg:text-[4.2rem]">
+                A arte de transformar momentos em <em className="italic font-serif font-normal text-[#c5a059]">memórias tangíveis</em>.
               </h1>
 
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-[#685341] sm:text-lg">
-                No Ateliê Momento Perfeito, transformamos papelaria, lembrancinhas e presentes em memórias físicas. Tudo feito à mão em Porto Feliz, com o cuidado que sua festa merece.
+              <p className="mt-8 max-w-lg text-base font-light leading-relaxed text-[#5c504c] sm:text-lg">
+                Criações artesanais exclusivas desenvolvidas em Porto Feliz. Papelaria fina, lembrancinhas e mimos afetivos feitos sob medida para a sua celebração.
               </p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-                <WhatsAppButton className="px-5 py-3 text-xs font-semibold text-white bg-[#25D366] hover:bg-[#20ba5a]" />
+              <div className="mt-10 flex flex-wrap items-center gap-6">
+                <WhatsAppButton className="px-7 py-4 text-xs font-semibold tracking-widest uppercase text-white bg-[#1c1613] hover:bg-[#382d27] transition-all rounded-none" />
                 <a
                   href="#sobre"
-                  className="inline-flex items-center gap-2 px-4 py-3 text-xs font-semibold uppercase tracking-[0.15em] text-[#614530] transition hover:text-[#312015]"
+                  className="inline-flex items-center gap-2 text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-[#4a3e3d] transition-colors hover:text-[#c5a059]"
                 >
-                  Conheça o Ateliê <ArrowDown size={14} />
+                  O Ateliê <ArrowDown size={13} className="text-[#c5a059]" />
                 </a>
               </div>
 
-              <div className="mt-12 flex items-center gap-2 text-xs font-medium text-[#826953]">
-                <MapPin size={14} className="text-[#916e4b]" />
-                <span>Porto Feliz, SP — Atendimento sob encomenda</span>
+              <div className="mt-16 flex items-center gap-3 text-[0.7rem] font-medium tracking-wider uppercase text-[#8c7e7a]">
+                <MapPin size={13} className="text-[#c5a059]" />
+                <span>Porto Feliz, SP — Atendimento Sob Encomenda</span>
               </div>
             </div>
 
+            {/* Foto Hero Sofisticada com Moldura */}
             <div className="lg:col-span-5">
-              <div className="relative mx-auto max-w-sm rounded-2xl border border-[#e5d8c8] bg-[#f1e8dc] p-3 shadow-sm">
-                <div className="overflow-hidden rounded-xl">
-                  <img
-                    src="/logo.png"
-                    alt="Ateliê Momento Perfeito - Elvira Santos"
-                    className="aspect-[4/5] w-full object-cover"
-                  />
-                </div>
-                <div className="p-4 text-center">
-                  <p className="font-display text-lg text-[#312015]">By Elvira Santos</p>
-                  <p className="text-xs text-[#7c6653]">Criação e confecção artesanal</p>
+              <div className="relative mx-auto max-w-md">
+                <div className="absolute -inset-3 border border-[#c5a059]/30 translate-x-2 translate-y-2 pointer-events-none" />
+                <div className="relative bg-[#f2ede4] p-3 border border-[#e8e2d9]">
+                  <div className="overflow-hidden">
+                    <img
+                      src="/logo.png"
+                      alt="Ateliê Momento Perfeito - Elvira Santos"
+                      className="aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-105"
+                    />
+                  </div>
+                  <div className="py-4 text-center">
+                    <p className="font-display text-base tracking-wide text-[#1c1613]">By Elvira Santos</p>
+                    <p className="mt-0.5 text-[0.65rem] uppercase tracking-[0.2em] text-[#8c7e7a]">Design & Confecção Artesanal</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -168,65 +174,75 @@ export default function Home() {
         </section>
 
         {/* Sobre o Ateliê */}
-        <section id="sobre" className="border-t border-[#e5d8c8] bg-[#f2ebd2]/30 px-6 py-20">
+        <section id="sobre" className="border-t border-[#e8e2d9] bg-[#f5f0e6]/50 px-6 py-24 sm:py-32">
           <div className="mx-auto max-w-4xl text-center">
-            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#916e4b]">
-              História & Propósito
+            <span className="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#c5a059]">
+              Nossa Filosofia
             </span>
-            <h2 className="font-display mt-3 text-3xl font-normal text-[#312015] sm:text-4xl">
-              Cada encomenda é tratada como única.
+            <h2 className="font-display mt-4 text-3xl font-normal text-[#1c1613] sm:text-5xl">
+              Cuidado absoluto em cada dobra e textura.
             </h2>
-            <p className="mt-6 text-base leading-relaxed text-[#685341] sm:text-lg">
-              À frente do ateliê, <strong className="font-semibold text-[#312015]">Elvira Santos</strong> acompanha cada projeto do rascunho ao acabamento final. Acreditamos que festas e homenagens ganham vida nos pequenos detalhes — na escolha dos papéis, nas fitas, nas texturas e no carinho colocado em cada dobra.
+            <div className="mx-auto mt-8 h-px w-12 bg-[#c5a059]/60" />
+            <p className="mt-8 text-base font-light leading-relaxed text-[#5c504c] sm:text-lg">
+              À frente do ateliê, <strong className="font-normal text-[#1c1613]">Elvira Santos</strong> conduz cada projeto com um olhar sensível e apurado. Acreditamos que momentos especiais merecem peças que transmitam carinho, elegância e autenticidade — desde a escolha dos materiais até o laço final.
             </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <span className="rounded-full border border-[#d8c8b4] bg-[#f8f5f0] px-4 py-1.5 text-xs font-medium text-[#614530]">
-                Porto Feliz - SP
+            <div className="mt-12 flex flex-wrap justify-center gap-4">
+              <span className="border border-[#d8d0c2] bg-[#faf8f5] px-5 py-2 text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-[#4a3e3d]">
+                Ateliê em Porto Feliz
               </span>
-              <span className="rounded-full border border-[#d8c8b4] bg-[#f8f5f0] px-4 py-1.5 text-xs font-medium text-[#614530]">
-                Produção Sob Medida
+              <span className="border border-[#d8d0c2] bg-[#faf8f5] px-5 py-2 text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-[#4a3e3d]">
+                Projetos Exclusivos
               </span>
-              <span className="rounded-full border border-[#d8c8b4] bg-[#f8f5f0] px-4 py-1.5 text-xs font-medium text-[#614530]">
-                Feito à Mão
+              <span className="border border-[#d8d0c2] bg-[#faf8f5] px-5 py-2 text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-[#4a3e3d]">
+                Processo Manufaturado
               </span>
             </div>
           </div>
         </section>
 
-        {/* Serviços (Layout Estilo Lista Editorial) */}
-        <section id="servicos" className="border-t border-[#e5d8c8] px-6 py-20">
+        {/* Serviços (Grids Minimalistas de Luxo) */}
+        <section id="servicos" className="border-t border-[#e8e2d9] px-6 py-24 sm:py-32">
           <div className="mx-auto max-w-6xl">
-            <div className="max-w-xl">
-              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#916e4b]">
-                O que preparamos
-              </span>
-              <h2 className="font-display mt-2 text-3xl text-[#312015] sm:text-4xl">
-                Catálogo de Serviços
-              </h2>
+            <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+              <div>
+                <span className="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#c5a059]">
+                  O que Criamos
+                </span>
+                <h2 className="font-display mt-3 text-3xl font-normal text-[#1c1613] sm:text-4xl">
+                  Catálogo de Serviços
+                </h2>
+              </div>
+              <p className="max-w-xs text-xs font-light leading-relaxed text-[#8c7e7a]">
+                Cada peça é desenhada sob medida para harmonizar com a identidade visual da sua festa.
+              </p>
             </div>
 
-            <div className="mt-12 divide-y divide-[#e5d8c8] border-y border-[#e5d8c8]">
+            <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {services.map(({ number, icon: Icon, title, description }) => (
-                <div key={number} className="group py-8 transition-colors hover:bg-[#f2ebd2]/20">
-                  <div className="grid gap-4 sm:grid-cols-12 sm:items-center">
-                    <div className="flex items-center gap-4 sm:col-span-4">
-                      <span className="font-display text-xl text-[#916e4b]">{number}</span>
-                      <Icon size={20} className="text-[#614530]" />
-                      <h3 className="font-display text-xl text-[#312015]">{title}</h3>
+                <div 
+                  key={number} 
+                  className="group relative flex flex-col justify-between border border-[#e8e2d9] bg-[#faf8f5] p-8 transition-all duration-500 hover:border-[#c5a059]/60 hover:shadow-lg hover:shadow-[#1c1613]/[0.02]"
+                >
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <span className="font-display text-lg text-[#c5a059]">{number}</span>
+                      <Icon size={18} strokeWidth={1.2} className="text-[#6e605d] transition-colors group-hover:text-[#c5a059]" />
                     </div>
-                    <p className="text-sm leading-relaxed text-[#685341] sm:col-span-6">
+                    <h3 className="font-display mt-8 text-xl font-normal text-[#1c1613]">{title}</h3>
+                    <p className="mt-4 text-xs font-light leading-relaxed text-[#6e605d]">
                       {description}
                     </p>
-                    <div className="sm:col-span-2 sm:text-right">
-                      <a
-                        href="https://wa.me/5515996855481"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-[0.15em] text-[#916e4b] hover:text-[#312015]"
-                      >
-                        Encomendar <ArrowUpRight size={14} />
-                      </a>
-                    </div>
+                  </div>
+                  
+                  <div className="mt-8 pt-4 border-t border-[#f0ebe1]">
+                    <a
+                      href="https://wa.me/5515996855481"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[#1c1613] transition-colors hover:text-[#c5a059]"
+                    >
+                      Consultar <ArrowUpRight size={12} />
+                    </a>
                   </div>
                 </div>
               ))}
@@ -235,42 +251,51 @@ export default function Home() {
         </section>
 
         {/* Diferenciais */}
-        <section id="diferenciais" className="border-t border-[#e5d8c8] bg-[#efe6d8]/40 px-6 py-20">
+        <section id="diferenciais" className="border-t border-[#e8e2d9] bg-[#f5f0e6]/30 px-6 py-24 sm:py-32">
           <div className="mx-auto max-w-6xl">
-            <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
+            <div className="grid gap-16 lg:grid-cols-12 lg:items-center">
               <div className="lg:col-span-6">
-                <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#916e4b]">
-                  Por que encomendar conosco
+                <span className="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#c5a059]">
+                  Exclusividade & Cuidado
                 </span>
-                <h2 className="font-display mt-2 text-3xl text-[#312015] sm:text-4xl">
-                  Trabalho focado na sua necessidade.
+                <h2 className="font-display mt-3 text-3xl font-normal text-[#1c1613] sm:text-4xl">
+                  Por que escolher o Ateliê?
                 </h2>
-                <div className="mt-8 space-y-4">
+                <div className="mt-10 space-y-5">
                   {differentials.map((diff) => (
-                    <div key={diff} className="flex items-center gap-3">
-                      <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#916e4b] text-white">
-                        <Check size={12} strokeWidth={3} />
-                      </div>
-                      <span className="text-sm font-medium text-[#4a392c]">{diff}</span>
+                    <div key={diff} className="flex items-center gap-4">
+                      <span className="flex h-5 w-5 shrink-0 items-center justify-center border border-[#c5a059] text-[#c5a059]">
+                        <Check size={10} strokeWidth={2.5} />
+                      </span>
+                      <span className="text-xs font-medium tracking-wide uppercase text-[#4a3e3d]">{diff}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-[#d8c8b4] bg-[#f8f5f0] p-8 lg:col-span-6">
-                <h3 className="font-display text-2xl text-[#312015]">Como funciona o pedido?</h3>
-                <ol className="mt-6 space-y-4 text-sm text-[#685341]">
-                  <li className="flex gap-3">
-                    <strong className="text-[#916e4b]">1.</strong>
-                    <span>Você entra em contato via WhatsApp e nos conta sobre o evento.</span>
+              <div className="border border-[#e8e2d9] bg-[#faf8f5] p-10 lg:col-span-6">
+                <h3 className="font-display text-2xl font-normal text-[#1c1613]">O Processo Criativo</h3>
+                <ol className="mt-8 space-y-6 text-xs font-light text-[#5c504c]">
+                  <li className="flex gap-4">
+                    <span className="font-display text-base text-[#c5a059]">01.</span>
+                    <div>
+                      <strong className="font-medium text-[#1c1613]">Primeiro Contato:</strong>
+                      <p className="mt-1">Conversamos via WhatsApp para compreender o conceito, paleta e desejos do seu evento.</p>
+                    </div>
                   </li>
-                  <li className="flex gap-3">
-                    <strong className="text-[#916e4b]">2.</strong>
-                    <span>Definimos o tema, as peças, quantidades e prazos de entrega.</span>
+                  <li className="flex gap-4">
+                    <span className="font-display text-base text-[#c5a059]">02.</span>
+                    <div>
+                      <strong className="font-medium text-[#1c1613]">Definição do Projeto:</strong>
+                      <p className="mt-1">Apresentamos propostas de materiais, acabamentos e cronograma de produção.</p>
+                    </div>
                   </li>
-                  <li className="flex gap-3">
-                    <strong className="text-[#916e4b]">3.</strong>
-                    <span>Produzimos e finalizamos tudo manualmente para retirada/envio.</span>
+                  <li className="flex gap-4">
+                    <span className="font-display text-base text-[#c5a059]">03.</span>
+                    <div>
+                      <strong className="font-medium text-[#1c1613]">Confecção & Entrega:</strong>
+                      <p className="mt-1">Cada item é confeccionado e embalado artesanalmente com todo o rigor para a data.</p>
+                    </div>
                   </li>
                 </ol>
               </div>
@@ -278,48 +303,48 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Chamada para Contato Direto */}
-        <section id="contato" className="border-t border-[#e5d8c8] bg-[#3e2c20] px-6 py-20 text-[#f8f5f0]">
+        {/* Chamada para Contato Sofisticada */}
+        <section id="contato" className="border-t border-[#e8e2d9] bg-[#1c1613] px-6 py-24 text-[#faf8f5] sm:py-32">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#d8b896]">
-              Fale com a Artesã
+            <span className="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#c5a059]">
+              Atendimento Personalizado
             </span>
-            <h2 className="font-display mt-3 text-4xl text-[#f8f5f0] sm:text-5xl">
+            <h2 className="font-display mt-4 text-4xl font-normal text-[#faf8f5] sm:text-5xl">
               Vamos planejar sua encomenda?
             </h2>
-            <p className="mx-auto mt-4 max-w-lg text-sm text-[#d0bead] sm:text-base">
-              Envie uma mensagem no WhatsApp com a data do seu evento e o que você precisa.
+            <p className="mx-auto mt-6 max-w-lg text-xs font-light leading-relaxed text-[#b8adaa] sm:text-sm">
+              Solicite um orçamento exclusivo diretamente com a Elvira Santos.
             </p>
 
-            <div className="mt-8 flex justify-center">
-              {/* Botão corrigido: Fundo creme (#f8f5f0) com texto e ícone marrom escuro (#312015) */}
+            <div className="mt-10 flex justify-center">
+              {/* Botão com Fundo Claro e Texto Escuro de Alto Contraste */}
               <WhatsAppButton
                 variant="light"
-                className="px-6 py-3.5 text-xs font-bold bg-[#f8f5f0] text-[#312015] hover:bg-[#ffffff] transition-colors shadow-md"
+                className="px-8 py-4 text-xs font-bold tracking-widest uppercase bg-[#faf8f5] text-[#1c1613] hover:bg-[#c5a059] hover:text-[#1c1613] transition-all rounded-none shadow-xl"
               />
             </div>
 
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-xs text-[#b8a390]">
-              <span className="flex items-center gap-1.5"><MapPin size={14} /> Porto Feliz — SP</span>
-              <span>Telefone: (15) 99685-5481</span>
+            <div className="mt-16 flex flex-wrap items-center justify-center gap-8 text-[0.7rem] font-medium tracking-widest uppercase text-[#8c7e7a]">
+              <span className="flex items-center gap-2"><MapPin size={13} className="text-[#c5a059]" /> Porto Feliz — SP</span>
+              <span>Tel: (15) 99685-5481</span>
             </div>
           </div>
         </section>
       </main>
 
-      {/* Footer Limpo */}
-      <footer className="border-t border-[#312015] bg-[#2d1f15] px-6 py-8 text-[#a38e7c]">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
-          <p className="text-xs">
+      {/* Footer Minimalista */}
+      <footer className="border-t border-[#2c221e] bg-[#14100e] px-6 py-10 text-[#8c7e7a]">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 sm:flex-row">
+          <p className="text-[0.65rem] tracking-wider uppercase">
             © {new Date().getFullYear()} Ateliê Momento Perfeito — By Elvira Santos
           </p>
           <a
             href="https://www.instagram.com/momento_perfeito_by_elvira"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs text-[#d0bead] hover:text-white"
+            className="inline-flex items-center gap-2 text-[0.65rem] tracking-wider uppercase text-[#b8adaa] transition-colors hover:text-[#c5a059]"
           >
-            <Instagram size={14} /> Instagram
+            <Instagram size={13} /> Instagram
           </a>
         </div>
       </footer>
