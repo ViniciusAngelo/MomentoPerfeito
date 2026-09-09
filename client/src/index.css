@@ -17,19 +17,44 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
+/* Base consistente para todos os elementos. */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 92px;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  min-height: 100vh;
   background: #faf6f0;
+}
+
+body,
+button,
+a,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+img,
+picture,
+svg,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
 }
 
 a {
@@ -37,12 +62,17 @@ a {
   text-decoration: none;
 }
 
-button, a {
+button,
+a {
   -webkit-tap-highlight-color: transparent;
 }
 
-.font-display {
-  font-family: 'Playfair Display', Georgia, serif;
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
 }
 
 ::selection {
@@ -52,5 +82,25 @@ button, a {
 
 :focus-visible {
   outline: 2px solid #a37643;
-  outline-offset: 3px;
+  outline-offset: 4px;
+}
+
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Evita a animação de scroll para pessoas que preferem menos movimento. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
