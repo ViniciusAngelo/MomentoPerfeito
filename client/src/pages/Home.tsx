@@ -251,18 +251,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="galeria" className="bg-[#f5eee6] px-5 py-24 sm:px-8 sm:py-32 lg:px-12">
-          <div className="mx-auto max-w-7xl">
-            <div className="flex flex-col justify-between gap-7 sm:flex-row sm:items-end">
-              <SectionHeading eyebrow="Galeria de inspirações" title="Feito para o seu momento." />
-              <p className="max-w-xs text-sm leading-6 text-[#806b57] sm:pb-1">Em breve, um álbum com os trabalhos mais especiais do ateliê.</p>
-            </div>
-            <div className="mt-14 grid auto-rows-[180px] gap-4 sm:grid-cols-2 sm:auto-rows-[220px] lg:grid-cols-4 lg:auto-rows-[250px]">
-              {galleryItems.map((item) => <GalleryPlaceholder key={item.label} {...item} />)}
-            </div>
-            <div className="mt-7 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-[#9b764c]"><CircleDot size={13} /> Substitua os espaços pelas fotos dos seus trabalhos</div>
-          </div>
-        </section>
+
 
         <section className="relative bg-[#fbf8f3] px-5 py-24 sm:px-8 sm:py-32 lg:px-12">
           <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1fr_.85fr] lg:gap-24">
