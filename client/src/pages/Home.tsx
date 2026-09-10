@@ -69,6 +69,10 @@ const catalogImages = [
   { id: 11, src: "/catalogo/11.jpeg" },
   { id: 12, src: "/catalogo/12.jpeg" },
   { id: 13, src: "/catalogo/13.jpeg" },
+  { id: 14, src: "/catalogo/14.png" },
+  { id: 15, src: "/catalogo/15.png" },
+  { id: 16, src: "/catalogo/16.png" },
+  { id: 17, src: "/catalogo/17.png" },
 ];
 
 const differentials = [
