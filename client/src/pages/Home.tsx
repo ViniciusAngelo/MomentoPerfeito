@@ -56,23 +56,32 @@ const services = [
 ];
 
 const catalogImages = [
-  { id: 1, src: "/catalogo/1.jpeg" },
-  { id: 2, src: "/catalogo/2.jpeg" },
-  { id: 3, src: "/catalogo/3.jpeg" },
-  { id: 4, src: "/catalogo/4.jpeg" },
-  { id: 5, src: "/catalogo/5.jpeg" },
-  { id: 6, src: "/catalogo/6.jpeg" },
-  { id: 7, src: "/catalogo/7.jpeg" },
-  { id: 8, src: "/catalogo/8.jpeg" },
-  { id: 9, src: "/catalogo/9.jpeg" },
-  { id: 10, src: "/catalogo/10.jpeg" },
-  { id: 11, src: "/catalogo/11.jpeg" },
-  { id: 12, src: "/catalogo/12.jpeg" },
-  { id: 13, src: "/catalogo/13.jpeg" },
-  { id: 14, src: "/catalogo/14.png" },
-  { id: 15, src: "/catalogo/15.png" },
-  { id: 16, src: "/catalogo/16.png" },
-  { id: 17, src: "/catalogo/17.png" },
+  { id: 1, src: "/catalogo/1.jpeg", title: "Peça artesanal 1" },
+  { id: 2, src: "/catalogo/2.jpeg", title: "Peça artesanal 2" },
+  { id: 3, src: "/catalogo/3.jpeg", title: "Peça artesanal 3" },
+  { id: 4, src: "/catalogo/4.jpeg", title: "Peça artesanal 4" },
+  { id: 5, src: "/catalogo/5.jpeg", title: "Peça artesanal 5" },
+  { id: 6, src: "/catalogo/6.jpeg", title: "Peça artesanal 6" },
+  { id: 7, src: "/catalogo/7.jpeg", title: "Peça artesanal 7" },
+  { id: 8, src: "/catalogo/8.jpeg", title: "Peça artesanal 8" },
+  { id: 9, src: "/catalogo/9.jpeg", title: "Peça artesanal 9" },
+  { id: 10, src: "/catalogo/10.jpeg", title: "Peça artesanal 10" },
+  { id: 11, src: "/catalogo/11.jpeg", title: "Peça artesanal 11" },
+  { id: 12, src: "/catalogo/12.jpeg", title: "Peça artesanal 12" },
+  { id: 13, src: "/catalogo/13.jpeg", title: "Peça artesanal 13" },
+  { id: 14, src: "/catalogo/14.png", title: "Peça artesanal 14" },
+  { id: 15, src: "/catalogo/15.png", title: "Peça artesanal 15" },
+  { id: 16, src: "/catalogo/16.png", title: "Peça artesanal 16" },
+  { id: 17, src: "/catalogo/17.png", title: "Peça artesanal 17" },
+  ...Array.from({ length: 11 }, (_, index) => {
+    const number = index + 1;
+    return {
+      id: 17 + number,
+      src: `/catalogo/Casamento (${number}).jpeg`,
+      title: `Casamento (${number})`,
+    };
+  }),
+  { id: 29, src: "/catalogo/Visita.jpeg", title: "Visita" },
 ];
 
 const differentials = [
@@ -254,7 +263,7 @@ export default function Home() {
                   <div className="relative w-full overflow-hidden rounded-xl bg-[#efe6d8]">
                     <img
                       src={img.src}
-                      alt={`Trabalho artesanal ${img.id}`}
+                      alt={img.title}
                       className="h-auto w-full object-contain transition-transform duration-500 ease-out group-hover:scale-105"
                       loading="lazy"
                     />
